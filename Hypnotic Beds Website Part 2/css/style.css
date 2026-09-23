@@ -1043,3 +1043,62 @@ footer {
     }
 
 }
+/* =========================================
+   ACCESSIBILITY & CODE QUALITY ENHANCEMENTS
+   ========================================= */
+
+/* Keep keyboard focus clearly visible without changing normal appearance. */
+:where(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid rgba(185, 166, 42, .55);
+    outline-offset: 3px;
+}
+
+/* Use the same font for native buttons as the rest of the interface. */
+button {
+    font: inherit;
+}
+
+/* Prevent long words/addresses from causing horizontal overflow. */
+p,
+li,
+a,
+label {
+    overflow-wrap: anywhere;
+}
+
+/* Keep media responsive even when content changes. */
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Improve touch targets on small screens without altering the layout. */
+@media (max-width: 680px) {
+
+    nav a,
+    .btn,
+    .menu {
+        min-height: 44px;
+    }
+
+    nav a {
+        display: flex;
+        align-items: center;
+    }
+}
