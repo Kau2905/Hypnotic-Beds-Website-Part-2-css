@@ -600,3 +600,232 @@ nav a.active {
     font-size: 16px;
     line-height: 1.7;
 }
+/* =========================================
+   FORM SECTION
+   ========================================= */
+
+.form-wrap {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.form-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(36, 89, 166, .1);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-weight: 800;
+    display: block;
+    margin-bottom: 6px;
+    color: #34363a;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d9d9d4;
+    border-radius: 12px;
+    font: inherit;
+    background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid rgba(36, 89, 166, .12);
+    border-color: var(--blue);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+
+/* =========================================
+   IMAGE UPLOAD
+   ========================================= */
+
+.dropzone {
+    border: 2px dashed #cfc7b4;
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+    background: #fffdf8;
+}
+
+.dropzone input {
+    border: 0;
+    padding: 0;
+}
+
+.preview {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.preview img {
+    height: 90px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   INFORMATION LIST
+   ========================================= */
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    margin: 16px 0;
+}
+
+.info-list strong {
+    display: block;
+    color: var(--blue);
+}
+
+
+/* =========================================
+   MAP
+   ========================================= */
+
+.map-box {
+    min-height: 300px;
+    border-radius: 20px;
+    background: linear-gradient(135deg,
+            #e8e0cf,
+            #f9f9f7);
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+
+/* =========================================
+   PRODUCT PAGE
+   ========================================= */
+
+.product-section-heading {
+    margin-top: 75px;
+}
+
+.product-feature-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: rgba(36, 89, 166, .1);
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+}
+
+.product-price {
+    color: var(--gold);
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin: 8px 0 10px;
+}
+
+.product-extra-cards {
+    margin-top: 30px;
+}
+
+.product-contact {
+    margin-top: 45px;
+    padding: 35px;
+    border-radius: 22px;
+    background:
+        linear-gradient(135deg,
+            rgba(36, 89, 166, .08),
+            rgba(231, 217, 121, .18));
+
+    border: 1px solid rgba(36, 89, 166, .12);
+    text-align: center;
+}
+
+.product-contact h3 {
+    color: var(--blue);
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.product-contact p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: 0 auto 20px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #111b2d;
+    color: #dbe5f3;
+    padding: 50px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-brand {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.footer-grid h3 {
+    color: var(--gold-light);
+    margin-bottom: 12px;
+}
+
+.footer-grid a {
+    display: block;
+    margin: 7px 0;
+    color: #dbe5f3;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    margin-top: 30px;
+    padding-top: 18px;
+    font-size: .85rem;
+    color: #9eb0c9;
+}
