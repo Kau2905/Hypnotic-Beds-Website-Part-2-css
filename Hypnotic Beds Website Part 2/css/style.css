@@ -829,3 +829,217 @@ footer {
     font-size: .85rem;
     color: #9eb0c9;
 }
+/* =========================================
+   NOTICES
+   ========================================= */
+
+.notice {
+    padding: 14px 16px;
+    background: #fff7cf;
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #5b5428;
+}
+
+
+/* =========================================
+   BUSINESS CARD
+   ========================================= */
+
+.business-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 12px;
+}
+
+.business-card img {
+    border-radius: 12px;
+}
+
+
+/* =========================================
+   FLOATING BUTTON
+   ========================================= */
+
+.floating {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1200;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+}
+
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 32px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+
+    z-index: 9999;
+
+    transition:
+        transform .3s ease,
+        background-color .3s ease;
+}
+
+.floating-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1);
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .hero-grid,
+    .form-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 680px) {
+
+    .topbar .container {
+        justify-content: center;
+    }
+
+    .nav {
+        min-height: 68px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        left: 4%;
+        right: 4%;
+        top: 68px;
+        background: #fff;
+        padding: 18px;
+        border-radius: 0 0 18px 18px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .cards,
+    .price-grid,
+    .gallery,
+    .form-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero-card {
+        transform: none;
+    }
+
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+
+    .product-section-heading {
+        margin-top: 55px;
+    }
+
+    .product-contact {
+        padding: 25px 18px;
+    }
+
+    .product-contact h3 {
+        font-size: 1.7rem;
+    }
+
+    .gallery-item img {
+        height: 260px;
+    }
+}
+
+/* =========================================
+   HOMEPAGE HERO BED IMAGE
+   ========================================= */
+
+.hero-bed-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .hero-bed-image {
+        height: 360px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+
+    .hero-bed-image {
+        height: 300px;
+    }
+
+}
