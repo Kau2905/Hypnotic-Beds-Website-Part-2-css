@@ -1266,3 +1266,131 @@ iframe {
         display: flex;
     }
 }
+
+/* ==================== GALLERY LIGHTBOX ==================== */
+
+/* Make gallery images look clickable */
+.gallery-item img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: brightness(0.92);
+}
+
+/* Dark background covering the screen */
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(10, 15, 25, 0.92);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* Show the lightbox */
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Large image */
+.gallery-lightbox-image {
+    display: block;
+    max-width: 90vw;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+    cursor: default;
+}
+
+/* Image caption */
+.gallery-lightbox-caption {
+    margin-top: 14px;
+    color: #FFFDF8;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Image and caption container */
+.gallery-lightbox-content {
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Close button */
+.gallery-lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    background: #2459A6;
+    color: #FFFDF8;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-lightbox-close:hover {
+    background: #123B78;
+    transform: scale(1.06);
+}
+
+.gallery-lightbox-close:focus-visible {
+    outline: 3px solid #E7D979;
+    outline-offset: 4px;
+}
+
+/* Prevent the page behind the lightbox from scrolling */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .gallery-lightbox {
+        padding: 14px;
+    }
+
+    .gallery-lightbox-image {
+        max-width: 94vw;
+        max-height: 75vh;
+    }
+
+    .gallery-lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 42px;
+        height: 42px;
+        font-size: 27px;
+    }
+
+    .gallery-lightbox-caption {
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-lightbox,
+    .gallery-item img,
+    .gallery-lightbox-close {
+        transition: none;
+    }
+}
