@@ -1394,3 +1394,29 @@ body.lightbox-open {
         transition: none;
     }
 }
+/* Mobile burger menu */
+.menu {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #2459A6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    header nav.open {
+        display: flex;
+    }
+}
