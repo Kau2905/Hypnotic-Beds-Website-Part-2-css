@@ -14,8 +14,11 @@
         content="bed quotations Durban, order beds online, request bed quotation, custom bed orders, furniture enquiries, affordable beds Durban, Hypnotic Beds">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="css/style.css">
+
     <script src="js/script.js" defer></script>
+    
 </head>
 
 <body>
@@ -23,7 +26,6 @@
     <!-- Top Bar -->
     <div class="topbar">
         <div class="container">
-
             <span>
                 Direct from the factory • Quality beds &amp; furniture
             </span>
@@ -33,7 +35,6 @@
                 <a href="tel:+27314612128">031 461 2128</a> •
                 <a href="tel:+27724109590">072 410 9590</a>
             </span>
-
         </div>
     </div>
 
@@ -46,7 +47,7 @@
                 <span>“Beds that hypnotize you”</span>
             </a>
 
-            <button class="menu" aria-label="Open menu">
+            <button class="menu" type="button" aria-label="Open menu" aria-expanded="false">
                 ☰
             </button>
 
@@ -77,10 +78,9 @@
             <h1>Tell us what you need.</h1>
 
             <p>
-                Complete the form and it will open WhatsApp with your request.
-                For a real production website, connect this form to a
-                backend/database so uploaded files can be stored and processed
-                securely.
+                Complete the quotation or order form below.
+                A confirmation message will appear when your details
+                pass validation.
             </p>
 
         </div>
@@ -88,7 +88,6 @@
 
     <!-- Quote & Order Section -->
     <section class="section">
-
         <div class="container form-wrap">
 
             <!-- How It Works -->
@@ -99,38 +98,23 @@
                 </h2>
 
                 <ul class="feature-list">
-
-                    <li>
-                        Choose quote or order details
-                    </li>
-
-                    <li>
-                        Add your size, quantity and requirements
-                    </li>
-
-                    <li>
-                        Upload reference pictures for custom work
-                    </li>
-
-                    <li>
-                        Submit through WhatsApp
-                    </li>
-
-                    <li>
-                        Confirm final price, fabric, delivery and payment
-                        with the business
-                    </li>
-
+                    <li>Choose whether to request a quotation or place an order.</li>
+                    <li>Add your product, size, quantity and requirements.</li>
+                    <li>Upload reference pictures for custom work.</li>
+                    <li>Submit the form to see your confirmation message.</li>
+                    <li>Contact the business separately to confirm price, delivery and payment.</li>
                 </ul>
 
                 <div class="notice">
-
                     <strong>Payment:</strong>
-
                     The supplied business information states half deposit
-                    and balance on delivery.
-
+                    and the balance on delivery.
                 </div>
+
+                <p class="small" style="margin-top: 16px;">
+                    Please note: this version validates the form in your
+                    browser. It does not automatically send or save orders.
+                </p>
 
             </div>
 
@@ -139,7 +123,6 @@
 
                 <!-- Form Navigation -->
                 <div class="actions" style="margin-bottom: 22px;">
-
                     <a class="btn btn-primary" href="#quote">
                         Request quotation
                     </a>
@@ -147,7 +130,6 @@
                     <a class="btn btn-outline" href="#order">
                         Place order
                     </a>
-
                 </div>
 
                 <!-- Quote Form -->
@@ -157,96 +139,94 @@
                         Request a quotation
                     </h2>
 
+                    <p class="form-instructions">
+                        Fields marked with * are required. Enter your name,
+                        contact number, product or service, and quantity.
+                    </p>
+
                     <div class="form-grid">
 
                         <div>
-                            <label>Name *</label>
-                            <input name="name" required>
+                            <label for="quoteName">Name *</label>
+                            <input id="quoteName" name="name" type="text" placeholder="Enter your full name" required>
                         </div>
 
                         <div>
-                            <label>Phone *</label>
-                            <input name="phone" required>
+                            <label for="quotePhone">Phone *</label>
+                            <input id="quotePhone" name="phone" type="tel" placeholder="e.g. 072 410 9590"
+                                pattern="[0-9 +()-]{7,20}" title="Enter a valid phone number." required>
                         </div>
 
                         <div>
-                            <label>Email</label>
-                            <input name="email" type="email">
+                            <label for="quoteEmail">Email</label>
+                            <input id="quoteEmail" name="email" type="email" placeholder="name@gmail.com">
+                            <small class="field-hint">
+                                Optional. If provided, use a Gmail address.
+                            </small>
                         </div>
 
                         <div>
-                            <label>Product / Service *</label>
-
-                            <select name="product" required>
-                                <option value="">Select</option>
-                                <option>Bed</option>
-                                <option>Pillowtop bed</option>
-                                <option>Bunk bed</option>
-                                <option>Round princess bed</option>
-                                <option>Lounge suite</option>
-                                <option>Revamp / repair</option>
-                                <option>Custom-made item</option>
+                            <label for="quoteProduct">Product / Service *</label>
+                            <select id="quoteProduct" name="product" required>
+                                <option value="">Select a product or service</option>
+                                <option value="Bed">Bed</option>
+                                <option value="Pillowtop bed">Pillowtop bed</option>
+                                <option value="Bunk bed">Bunk bed</option>
+                                <option value="Round princess bed">Round princess bed</option>
+                                <option value="Lounge suite">Lounge suite</option>
+                                <option value="Revamp / repair">Revamp / repair</option>
+                                <option value="Custom-made item">Custom-made item</option>
                             </select>
                         </div>
 
                         <div>
-                            <label>Size</label>
-
-                            <select name="size">
-                                <option>Not sure</option>
-                                <option>Single</option>
-                                <option>Three Quarter</option>
-                                <option>Double</option>
-                                <option>Queen</option>
-                                <option>King</option>
-                                <option>Custom</option>
+                            <label for="quoteSize">Size</label>
+                            <select id="quoteSize" name="size">
+                                <option value="Not sure">Not sure</option>
+                                <option value="Single">Single</option>
+                                <option value="Three Quarter">Three Quarter</option>
+                                <option value="Double">Double</option>
+                                <option value="Queen">Queen</option>
+                                <option value="King">King</option>
+                                <option value="Custom">Custom</option>
                             </select>
                         </div>
 
                         <div>
-                            <label>Quantity</label>
-                            <input name="quantity" type="number" min="1" value="1">
+                            <label for="quoteQuantity">Quantity *</label>
+                            <input id="quoteQuantity" name="quantity" type="number" min="1" max="100" step="1" value="1"
+                                required>
+                            <small class="field-hint">
+                                Enter a quantity between 1 and 100.
+                            </small>
                         </div>
 
                         <div class="full">
-
-                            <label>
-                                Describe what you need
-                            </label>
-
-                            <textarea name="details"
+                            <label for="quoteDetails">Describe what you need</label>
+                            <textarea id="quoteDetails" name="details"
                                 placeholder="Fabric, colour, dimensions, comfort preference, delivery area, etc."></textarea>
-
                         </div>
 
                         <div class="full">
-
-                            <label>
-                                Reference pictures
-                            </label>
+                            <label for="quotePictures">Reference pictures</label>
 
                             <div class="dropzone">
-
-                                <input class="file-input" data-preview="#quotePreview" type="file" accept="image/*"
-                                    multiple>
+                                <input id="quotePictures" class="file-input" data-preview="#quotePreview" type="file"
+                                    accept="image/*" multiple>
 
                                 <p class="small">
                                     Choose photos of your custom design.
-                                    Front-end preview only in this version.
+                                    Pictures can be previewed in this version.
                                 </p>
 
                                 <div class="preview" id="quotePreview"></div>
-
                             </div>
-
                         </div>
 
                     </div>
 
                     <button class="btn btn-gold" style="margin-top: 18px;" type="submit">
-
-                        Send Quote Request on WhatsApp
-
+                        Submit Quote Request
                     </button>
 
                 </form>
@@ -261,163 +241,114 @@
                         Place an order
                     </h2>
 
+                    <p class="form-instructions">
+                        Fields marked with * are required. Enter your name,
+                        contact number, product and quantity.
+                    </p>
+
                     <div class="form-grid">
 
                         <div>
-                            <label>Name *</label>
-                            <input name="name" required>
+                            <label for="orderName">Name *</label>
+                            <input id="orderName" name="name" type="text" placeholder="Enter your full name" required>
                         </div>
 
                         <div>
-                            <label>Phone *</label>
-                            <input name="phone" required>
+                            <label for="orderPhone">Phone *</label>
+                            <input id="orderPhone" name="phone" type="tel" placeholder="e.g. 072 410 9590"
+                                pattern="[0-9 +()-]{7,20}" title="Enter a valid phone number." required>
                         </div>
 
                         <div class="full">
-
-                            <label>
-                                Product *
-                            </label>
-
-                            <input name="product" placeholder="e.g. Queen Pillowtop" required>
-
+                            <label for="orderProduct">Product *</label>
+                            <input id="orderProduct" name="product" type="text" placeholder="e.g. Queen Pillowtop bed"
+                                required>
                         </div>
 
                         <div>
-
-                            <label>
-                                Size
-                            </label>
-
-                            <input name="size">
-
+                            <label for="orderSize">Size</label>
+                            <input id="orderSize" name="size" type="text" placeholder="e.g. Queen">
                         </div>
 
                         <div>
-
-                            <label>
-                                Quantity
-                            </label>
-
-                            <input name="quantity" type="number" min="1" value="1">
-
+                            <label for="orderQuantity">Quantity *</label>
+                            <input id="orderQuantity" name="quantity" type="number" min="1" max="100" step="1" value="1"
+                                required>
+                            <small class="field-hint">
+                                Enter a quantity between 1 and 100.
+                            </small>
                         </div>
 
                         <div class="full">
-
-                            <label>
-                                Delivery address
-                            </label>
-
-                            <textarea name="address"></textarea>
-
+                            <label for="orderAddress">Delivery address</label>
+                            <textarea id="orderAddress" name="address"
+                                placeholder="Enter your delivery address"></textarea>
                         </div>
 
                         <div class="full">
-
-                            <label>
-                                Custom requirements
-                            </label>
-
-                            <textarea name="details"></textarea>
-
+                            <label for="orderDetails">Custom requirements</label>
+                            <textarea id="orderDetails" name="details"
+                                placeholder="Enter any special requirements"></textarea>
                         </div>
 
                     </div>
 
                     <button class="btn btn-primary" style="margin-top: 18px;" type="submit">
-
-                        Place Order via WhatsApp
-
+                        Submit Order
                     </button>
 
                 </form>
 
             </div>
-
         </div>
-
     </section>
 
     <!-- Footer -->
     <footer>
-
         <div class="container footer-grid">
 
-            <!-- Footer Brand -->
             <div>
+                <div class="footer-brand">HYPNOTIC BEDS</div>
 
-                <div class="footer-brand">
-                    HYPNOTIC BEDS
-                </div>
-
-                <p>
-                    “Beds that hypnotize you”
-                </p>
+                <p>“Beds that hypnotize you”</p>
 
                 <p style="margin-top: 10px;">
                     Quality beds, lounges, custom furniture and repairs —
                     serving Durban and customers beyond Durban.
                 </p>
-
             </div>
 
-            <!-- Quick Links -->
             <div>
-
                 <h3>Quick Links</h3>
-
                 <a href="products.html">Beds &amp; Prices</a>
                 <a href="services.html">Services</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="quote.html">Request a Quote</a>
-
             </div>
 
-            <!-- Contact -->
             <div>
-
                 <h3>Contact</h3>
-
-                <a href="tel:+27314612128">
-                    031 461 2128
-                </a>
-
-                <a href="tel:+27724109590">
-                    072 410 9590
-                </a>
-
+                <a href="tel:+27314612128">031 461 2128</a>
+                <a href="tel:+27724109590">072 410 9590</a>
                 <a href="mailto:hypnoticbeds@gmail.com">
                     hypnoticbeds@gmail.com
                 </a>
-
-                <p>
-                    1st Floor, 62 Balfour Road, Jacobs
-                </p>
-
+                <p>1st Floor, 62 Balfour Road, Jacobs</p>
             </div>
 
         </div>
 
-        <!-- Copyright -->
         <div class="container copyright">
-
             © <span id="year"></span>
             Hypnotic Beds. All rights reserved.
-
         </div>
-
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/27821234567" class="floating-whatsapp" target="_blank"
+    <!-- Floating WhatsApp Contact Button -->
+    <a href="https://wa.me/27724109590" class="floating-whatsapp" target="_blank" rel="noopener noreferrer"
         aria-label="Chat with Hypnotic Beds on WhatsApp">
-
         <i class="fa-brands fa-whatsapp"></i>
-
     </a>
-
-
 
 </body>
 
