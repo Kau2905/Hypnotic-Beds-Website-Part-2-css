@@ -171,6 +171,105 @@ Technical Specifications
 •	Code Organisation: External CSS with structured sections and comments
 Responsiveness Testing and Iteration Across Devices
 These screenshots show how the Hypnotic Beds website responds at different screen sizes after responsive design testing and CSS adjustments.
+Phase 3: JavaScript Functionality, Interactivity and SEO Enhancements
+Duration: 27 October 2026 – 31 October 2026
+This phase focused on improving the functionality and usability of the Hypnotic Beds website by implementing JavaScript interactivity, form validation, gallery enhancements and search engine optimisation (SEO). The aim was to make the website more interactive, user-friendly and accessible while maintaining the existing Hypnotic Beds visual identity.
+Stage 1: JavaScript Foundation and Integration
+The first stage focused on implementing JavaScript functionality across the website.
+The following improvements were made:
+Created and maintained the external JavaScript file.
+•	Linked the JavaScript file to the relevant HTML pages using the `defer` attribute.
+•	Used the `DOMContentLoaded` event to ensure that JavaScript executes after the HTML document has been loaded.
+•	Used JavaScript event listeners to respond to user interactions.
+•	Organised JavaScript functionality into separate sections to improve code readability and  maintainability.
+Stage 2: Responsive Navigation and Interactive Features
+JavaScript was used to improve the website's navigation and interactive behaviour.
+The following functionality was implemented:
+•	Added a mobile navigation menu for smaller screen sizes.
+•	Implemented a menu toggle to open and close the navigation.
+•	Improved navigation usability on mobile and tablet devices.
+•	Added interactive behaviour to website elements where required.
+Stage 3: Quote and Order Form Validation
+JavaScript validation was implemented on the Quote & Order page to help customers provide the required information correctly.
+The following validation features were introduced:
+•	Required field validation.
+•	Customer name validation.
+•	Phone number validation.
+•	Gmail address format validation.
+•	Quantity validation, allowing whole numbers between 1 and 100.
+•	Delivery address validation on the order form.
+•	Custom error messages displayed below incorrect fields.
+•	Real-time validation when users type, change selections or leave fields.
+•	Visual error indicators for invalid fields.
+•	Automatic scrolling to the first invalid field when the form is submitted.
+•	Success messages displayed after successful form validation.
+The validation improves the accuracy of customer information and helps users identify and correct mistakes before completing a form.
+Note: The current form functionality provides client-side validation and success messages. Actual transmission and storage of customer enquiries and orders require a connected form-handling service or backend.
+Stage 4: Gallery Lightbox Functionality
+An interactive image lightbox was implemented on the Gallery page to improve the presentation of product photographs.
+The functionality includes:
+•	Making gallery images clickable.
+•	Enlarging selected images in a full-screen overlay.
+•	Displaying image captions using the corresponding gallery item title.
+•	Adding a close button to exit the enlarged image.
+•	Allowing users to close the lightbox by clicking outside the image.
+•	Supporting the Escape key to close the image viewer.
+•	Supporting Enter and Space keyboard interactions to open images.
+•	Preventing background page scrolling while the lightbox is open.
+•	Providing responsive image sizing for smaller screens.
+The lightbox allows visitors to view product photographs in greater detail without navigating away from the Gallery page.
+Stage 5: Search Engine Optimisation (SEO)
+SEO improvements were introduced to help search engines understand the content and purpose of the website pages.
+The following improvements were implemented:
+•	Added unique meta descriptions to the main website pages.
+•	Created page-specific descriptions for the Home, Products & Prices, Services, Gallery, About, Contact and Quote & Order pages.
+•	Included relevant business information and location details in appropriate descriptions.
+•	Improved the relevance of page titles and descriptions to the content displayed on each page.
+The meta descriptions provide search engines with summaries of individual pages and may be displayed in search results.
+Stage 6: Accessibility and Usability Improvements
+Additional improvements were made to support easier interaction with website features.
+These included:
+•	Keyboard accessibility for gallery images.
+•	Visible focus indicators for interactive elements.
+•	Accessible labels for the gallery lightbox controls.
+•	Appropriate status messages for form validation results.
+•	Reduced-motion support for animated interface elements.
+•	Improved usability on smaller screens.
+Stage 7: Testing and Final Refinements
+The final stage focused on testing the new functionality and checking that it worked with the existing website design.
+The following areas were checked:
+•	JavaScript loading and integration.
+•	Mobile navigation functionality.
+•	Quote and order form validation.
+•	Custom error messages.
+•	Successful form validation messages.
+•	Gallery image enlargement and closing functionality.
+•	Keyboard interaction with the gallery lightbox.
+•	SEO meta descriptions across the website pages.
+•	Responsive behaviour on desktop, tablet and mobile screens.
+Any identified issues were corrected during the refinement process.
+Key Achievements in Phase 3
+•	JavaScript Integration:Added interactive functionality using an external JavaScript file.
+•	Form Validation:Implemented custom validation for quote and order forms.
+•	User Feedback: Added error messages and success messages.
+•	Gallery Lightbox:Enabled visitors to enlarge and view gallery images.
+•	Keyboard Accessibility: Added keyboard interaction for the gallery image viewer.
+•	SEO Improvements:Added unique meta descriptions to the website pages.
+•	Responsive Functionality:Improved interactive features for smaller screens.
+•	Code Organisation:Separated JavaScript functionality into organised sections.
+Technical Specifications
+•	Markup Language: HTML5
+•	Styling Language: CSS3
+•	Scripting Language: JavaScript
+•	JavaScript Integration: External `js/script.js`
+•	JavaScript Event Handling: Event listeners and DOMContentLoaded
+•	Form Validation: Client-side JavaScript validation
+•	Gallery Functionality: JavaScript lightbox
+•	SEO: Page-specific meta descriptions
+•	Responsive Design: CSS media queries
+•	Development Environment: Visual Studio Code
+•	Version Control: GitHub
+•	Hosting Provider: Netlify
 Commit
 Part 1
 Initial Project - Created the Hypnotic Beds project repository and established the initial folder structure
@@ -187,6 +286,17 @@ Add responsive navigation - Implemented the mobile navigation layout for smaller
 Add responsive images - Improved image sizing and gallery behaviour across different screen sizes
 Improve accessibility and usability - Added keyboard focus states, reduced-motion support and other usability improvements
 Finalise part 2 Styling - Completed CSS refinement, responsive testing and visual consistency improvements
+Part 3
+Create JavaScript file – Created and linked the external JavaScript file.
+Add responsive navigation functionality – Implemented the mobile menu interaction.
+Add quote and order validation – Implemented JavaScript validation for customer forms.
+Add custom validation feedback – Added error messages and successful validation messages.
+Implement gallery lightbox – Added image enlargement, captions and closing controls.
+Improve gallery accessibility – Added keyboard interaction and accessible controls.
+Add SEO meta descriptions – Added unique descriptions to the seven website pages.
+Improve website usability – Refined interactive elements and accessibility features.
+Test JavaScript functionality – Tested the implemented features and corrected identified issues.
+Update project documentation – Updated the README and changelog to include Part 3.
 Changelog.md
 Part 1 Versions
 v1.0 – Initial Project Setup
@@ -218,6 +328,23 @@ v2.7 – Accessibility and Refinement
 Added keyboard focus visibility, reduced-motion support, and other usability improvements while maintaining the existing visual design.
 v2.8 – Testing and Documentation
 Completed responsive testing, refined CSS presentation, and updated the README documentation.
+Part 3 Versions
+v3.0 – JavaScript Integration
+Integrated the external JavaScript file into the website pages and established the foundation for interactive functionality.
+v3.1 – Responsive Navigation Functionality
+Implemented JavaScript functionality for opening and closing the mobile navigation menu.
+v3.2 – Quote and Order Form Validation
+Implemented client-side form validation, including required fields, name, phone number, Gmail address, quantity and delivery address validation.
+v3.3 – Custom Form Feedback
+Added custom error messages, invalid field indicators and success messages for completed form validation.
+v3.4 – Gallery Lightbox
+Implemented an interactive gallery lightbox that allows visitors to enlarge images, view captions and close the image viewer using different controls.
+v3.5 – SEO Meta Descriptions
+Added unique meta descriptions to the seven main website pages to improve page descriptions for search engines.
+v3.6 – Accessibility and Usability Improvements
+Improved keyboard accessibility, focus visibility, reduced-motion support and user interaction with website features.
+v3.7 – Testing and Final Refinements
+Tested the JavaScript functionality, form validation, gallery lightbox, navigation and SEO implementation. Updated the project documentation to reflect the completed development work.
 References
 Afrihost (n.d.) Domains. [Online]. Available at: https://www.afrihost.com/domains. [Accessed on 20 August 2026].
 Afrihost (n.d.) Web hosting. [Online]. Available at: https://www.afrihost.com/web-hosting. [Accessed on 20 August 2026].
