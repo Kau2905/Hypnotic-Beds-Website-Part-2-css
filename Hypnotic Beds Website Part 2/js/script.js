@@ -305,3 +305,145 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
     });
+    
+/* =====================================
+   HYPNOTIC BEDS
+   GALLERY LIGHTBOX
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Select all images inside gallery items
+    const galleryImages = document.querySelectorAll(
+        ".gallery-item img"
+    );
+
+    // Only run this feature on pages containing gallery images
+    if (galleryImages.length === 0) {
+        return;
+    }
+
+    // Create the lightbox container
+    const lightbox = document.createElement("div");
+
+    lightbox.className = "gallery-lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Gallery image viewer");
+
+    // Add the close button, image and caption
+    lightbox.innerHTML = `
+        <button
+            type="button"
+            class="gallery-lightbox-close"
+            aria-label="Close image viewer"
+        >&times;</button>
+
+        <div class="gallery-lightbox-content">
+            <img
+                class="gallery-lightbox-image"
+                src=""
+                alt=""
+            >
+
+            <p class="gallery-lightbox-caption"></p>
+        </div>
+    `;
+
+    // Add the lightbox to the page
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = lightbox.querySelector(
+        ".gallery-lightbox-image"
+    );
+
+    const caption = lightbox.querySelector(
+        ".gallery-lightbox-caption"
+    );
+
+    const closeButton = lightbox.querySelector(
+        ".gallery-lightbox-close"
+    );
+
+    let previousFocus = null;
+
+    // Open an enlarged image
+    function openLightbox(image) {
+        previousFocus = document.activeElement;
+
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt || "Gallery image";
+
+        // Use the gallery item's title as the caption
+        const title = image.closest(".gallery-item")
+            ?.querySelector("strong")?.textContent.trim();
+
+        caption.textContent = title || image.alt || "";
+
+        lightbox.classList.add("active");
+        document.body.classList.add("lightbox-open");
+
+        closeButton.focus();
+    }
+
+    // Close the lightbox
+    function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.classList.remove("lightbox-open");
+
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+        caption.textContent = "";
+
+        // Return keyboard focus to the original image
+        if (previousFocus) {
+            previousFocus.focus();
+        }
+    }
+
+    // Make each gallery image clickable and keyboard accessible
+    galleryImages.forEach(function (image) {
+
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("role", "button");
+
+        image.setAttribute(
+            "aria-label",
+            "Enlarge image: " + (image.alt || "Gallery photo")
+        );
+
+        image.addEventListener("click", function () {
+            openLightbox(image);
+        });
+
+        image.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openLightbox(image);
+            }
+        });
+
+    });
+
+    // Close using the X button
+    closeButton.addEventListener("click", closeLightbox);
+
+    // Close when the dark background is clicked
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Close using the Escape key
+    document.addEventListener("keydown", function (event) {
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("active")
+        ) {
+            closeLightbox();
+        }
+    });
+});
+
+
