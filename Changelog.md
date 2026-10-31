@@ -28,4 +28,20 @@ v2.7 – Accessibility and Refinement
 Added keyboard focus visibility, reduced-motion support, and other usability improvements while maintaining the existing visual design.
 v2.8 – Testing and Documentation
 Completed responsive testing, refined CSS presentation, and updated the README documentation.
-
+Part 3 Versions
+v3.0 – JavaScript Integration
+Integrated the external JavaScript file into the website pages and established the foundation for interactive functionality.
+v3.1 – Responsive Navigation Functionality
+Implemented JavaScript functionality for opening and closing the mobile navigation menu.
+v3.2 – Quote and Order Form Validation
+Implemented client-side form validation, including required fields, name, phone number, Gmail address, quantity and delivery address validation.
+v3.3 – Custom Form Feedback
+Added custom error messages, invalid field indicators and success messages for completed form validation.
+v3.4 – Gallery Lightbox
+Implemented an interactive gallery lightbox that allows visitors to enlarge images, view captions and close the image viewer using different controls.
+v3.5 – SEO Meta Descriptions
+Added unique meta descriptions to the seven main website pages to improve page descriptions for search engines.
+v3.6 – Accessibility and Usability Improvements
+Improved keyboard accessibility, focus visibility, reduced-motion support and user interaction with website features.
+v3.7 – Testing and Final Refinements
+Tested the JavaScript functionality, form validation, gallery lightbox, navigation and SEO implementation. Updated the project documentation to reflect the completed development work.
