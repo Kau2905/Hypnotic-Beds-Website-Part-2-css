@@ -1,5 +1,52 @@
 
 /* =====================================
+   MOBILE NAVIGATION
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.querySelector(".menu");
+    const nav = document.querySelector("header nav");
+
+    if (menu && nav) {
+
+        // Open and close the mobile navigation
+        menu.addEventListener("click", function () {
+
+            nav.classList.toggle("open");
+
+            const isOpen = nav.classList.contains("open");
+
+            menu.setAttribute("aria-expanded", isOpen);
+            menu.setAttribute(
+                "aria-label",
+                isOpen ? "Close menu" : "Open menu"
+            );
+
+            menu.innerHTML = isOpen ? "&times;" : "☰";
+
+        });
+
+        // Close the menu after selecting a page
+        nav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                nav.classList.remove("open");
+
+                menu.setAttribute("aria-expanded", "false");
+                menu.setAttribute("aria-label", "Open menu");
+
+                menu.innerHTML = "☰";
+
+            });
+
+        });
+
+    }
+
+});
+/* =====================================
    HYPNOTIC BEDS
    QUOTE AND ORDER FORM VALIDATION
 ===================================== */
